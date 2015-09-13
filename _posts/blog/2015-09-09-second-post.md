@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: blog
 title: The 2nd post of this blog
 meta: This is the second post. Second comes after first
 category: blog

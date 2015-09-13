@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: blog
 title: Philip J Fry
 meta: Philip's character is named after Phil Hartman.
 category: blog

@@ -3,7 +3,7 @@
 	
 	<li><a href="{{site.baseurl}}/" class="{% if page.url == '/index.html' %}current{% endif %}">Home</a></li>
 	<li><a href="{{site.baseurl}}/blog.html" class="{% if page.url == '/blog.html' %}current{% endif %}">Blog</a></li>
-	<li><a href="{{site.baseurl}}/about.html" class="{% if page.url == '/about.html' or page.url contains 'cv' or page.url contains 'projects' %}current{% endif %}">About</a></li>
+	<li><a href="{{site.baseurl}}/about/" class="{% if page.url contains 'about' or page.url contains 'cv' or page.url contains 'projects' %}current{% endif %}">About</a></li>
 	<li><a href="{{site.baseurl}}/contact.html" class="{% if page.url == '/contact.html' %}current{% endif %}">Contact</a></li>
 </ul>
 </nav>

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: blog
 title: The first post of this blog
 meta: This is the very first post. This will be the cornerstone to mankind for generations to come.
 category: blog

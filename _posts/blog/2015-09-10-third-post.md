@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: blog
 title: The third post of this blog
 meta: My third post, boy I am getting tired.
 category: blog
