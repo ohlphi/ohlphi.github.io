@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+{{content}}
+
+<h3>Find out more about me here:</h3>
+<nav>
+	<ul class="nav">
+		{% for about in site.categories.about %}
+		<li>
+			<a href="{{site.baseurl}}{{about.url}}">{{about.title}}</a>
+		</li>
+		{% endfor %}
+	</ul>
+</nav>

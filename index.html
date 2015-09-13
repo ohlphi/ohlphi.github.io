@@ -3,5 +3,15 @@ layout: default
 ---
 
 <h1>My website</h1>
-<p>Add some more text and just checking that default is working</p>
+<p>This will be where the latest 5 posts are from the blog.</p>
+
+<h2>Latest posts</h2>
+<ul>
+	{% for blog in site.categories.blog limit:3 %}
+	<li>
+		<a href="{{site.baseurl}}{{blog.url}}">{{blog.title}}</a>
+		<p>{{blog.meta}}</p>
+	</li>
+	{% endfor %}
+</ul>
 
