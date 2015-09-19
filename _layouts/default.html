@@ -15,13 +15,49 @@
   <link rel="alternate" type="application/rss+xml" title="Your awesome title" href="http://yourdomain.com/feed.xml" />
 </head>
   <body>
-	  <header>
-		  {% include nav.html navclass='nav-top' %}
-		  <h4>My website about big data, analysis and other pits and pieces.</h4>
-	  </header>
-	  {{content}}
-	  <footer>
-	  	{% include nav.html navclass='nav-bottom' %}
-	  </footer>
+	<div class="grid">
+		<div class="row">
+			<div class="col-3">
+			</div>
+			<div class="col-9 bottom">
+				<header>
+					{% include nav.html navclass="nav-top" %}
+				</header>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-3">
+				<header>
+					<h2>My website about big data, analysis and other bits and pieces.</h2>
+				</header>
+				<div class="col-12">
+					<div class="about">
+						<img src="{{site.baseurl}}/img/about.jpg" alt="Philip Ohlsson">
+					</div>
+				</div>
+				<div class="col-12">
+					<h3>About me</h3>
+					<p>I am a mechanical engineer who turned into an analyst, who is now working towards becoming a data scientist. I have always been interested in statistics, math and solving complex problems, and over the last year I have started to dig deeper into the world of big data.<br>Most of my work will be posted on this website for anyone to read<br>If you want to know more about me, you can click <a href="{{site.baseurl}}/about/">here.</a></p>
+				</div>
+			</div>
+			<div class="col-9 right">
+				<div class="col-12">
+				</div>
+				<div class="col-12">
+					{{content}}
+				</div>
+			</div>				
+		</div>
+		<div class="row">
+			<div class="col-3">
+			</div>
+			<div class="col-9 bottom">
+				<footer>
+					{% include nav.html navclass="nav-bottom" %}
+				</footer>
+			</div>
+		</div>
+	</div>
   </body>
 </html>
