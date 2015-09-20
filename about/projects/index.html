@@ -2,19 +2,18 @@
 layout: default
 ---
 
-{% include nav-about.html %}
-
-<h1>Is this working????</h1>
-<p>Yes, so here you should list all the projects below</p>
-
-<ul>
+<ul class="nav">
+	<div class="col-11">
 	{% for projects in site.pages %}
 		{% if projects.category == 'projects' %}
-	<li>
-		<a href="{{site.baseurl}}{{projects.url}}">
-			<h3>{{projects.title}}</h3>
-		</a>
-	</li>
-		{% endif %}
-	{% endfor %}
+		<li class="list-post">
+
+			
+					<a href="{{site.baseurl}}{{projects.url}}" class="blog">{{projects.title}}</a>
+				{% endif %}
+		</li>
+		{% endfor %}
+	{% include nav-about.html %}
+	
+	</div>
 </ul>

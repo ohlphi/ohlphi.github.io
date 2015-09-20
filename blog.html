@@ -2,19 +2,13 @@
 layout: default
 ---
 
-<div class="col-12">
-	<h1>Blog</h1>
-</div>
-<div class="col-12">
-	<p>Here you can find all the posts I have done</p>
-</div>
-<div class="col-12">
-	<ul>
-		{% for blog in site.categories.blog %}
-		<li>
-			<a href="{{site.baseurl}}{{blog.url}}">{{blog.title}}</a>
-			<p>{{blog.meta}}</p>
+<ul class="nav">
+	{% for blog in site.categories.blog %}
+	<div class="col-11">
+		<li class="list-post">
+			<a href="{{site.baseurl}}{{blog.url}}" class="blog">{{blog.title}}</a>
+			<p class="p-blog">{{blog.meta}}</p>
 		</li>
-		{% endfor %}
-	</ul>
-</div>
+	</div>
+	{% endfor %}
+</ul>

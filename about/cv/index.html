@@ -2,7 +2,12 @@
 layout: default
 ---
 
-{% include nav-about.html %}
-
-<h1>This should only include a CV</h1>
-<p>So.... we can write one here!</p>
+<ul class="nav">
+	<div class="col-11">
+		<li class="list-post">
+			<h3 class="h3-post blog">My CV</h3>
+			<p class="p-blog">Put up CV here</p>
+		</li>
+		{% include nav-about.html %}
+	</div>
+</ul>

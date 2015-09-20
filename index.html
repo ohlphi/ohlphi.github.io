@@ -2,12 +2,14 @@
 layout: default
 ---
 
-<ul>
+<ul class="nav">
 	{% for blog in site.categories.blog limit:3 %}
-	<li>
-		<a href="{{site.baseurl}}{{blog.url}}">{{blog.title}}</a>
-		<p>{{blog.meta}}</p>
-	</li>
+	<div class="col-11">
+		<li class="list-post">
+			<a href="{{site.baseurl}}{{blog.url}}" class="blog">{{blog.title}}</a>
+			<p class="p-blog">{{blog.meta}}</p>
+		</li>
+	</div>
 	{% endfor %}
 </ul>
 

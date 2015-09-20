@@ -1,5 +1,5 @@
 ---
-layout: about
+layout: blog
 title: Learning R
 meta: I started learning about R some time ago.
 category: projects

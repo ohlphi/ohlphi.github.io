@@ -1,9 +1,9 @@
 <nav>
 <ul class="nav {{include.navclass}}">
 	
-	<li><a href="{{site.baseurl}}/" class="{% if page.url == '/' %}current{% endif %}">Home</a></li>
-	<li><a href="{{site.baseurl}}/blog/" class="{% if page.url contains 'blog' %}current{% endif %}">Blog</a></li>
-	<li><a href="{{site.baseurl}}/about/" class="{% if page.url contains 'about' or page.url contains 'cv' or page.url contains 'projects' %}current{% endif %}">About</a></li>
-	<li><a href="{{site.baseurl}}/contact/" class="{% if page.url contains 'contact' %}current{% endif %}">Contact</a></li>
+	<li><a href="{{site.baseurl}}/" class="nav-current nav-menu {% if page.url == '/' %}current{% endif %}">Home</a></li>
+	<li><a href="{{site.baseurl}}/blog/" class="nav-current nav-menu {% if page.url contains 'blog' %}current{% endif %}">Blog</a></li>
+	<li><a href="{{site.baseurl}}/about/" class="nav-current nav-menu {% if page.url contains 'about' or page.url contains 'cv' or page.url contains 'projects' %}current{% endif %}">About</a></li>
+	<li><a href="{{site.baseurl}}/contact/" class="nav-current nav-menu {% if page.url contains 'contact' %}current{% endif %}">Contact</a></li>
 </ul>
 </nav>
