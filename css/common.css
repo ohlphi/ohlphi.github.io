@@ -8,32 +8,23 @@ html {
 
 h2 {
     font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    text-align: justify;
-    padding: 3%;
-	font-size: 16px;
+    font-weight: 600;
+	font-size: 15px;
 	color: #6b6b6b;
-	margin: 3%;
 }
 
 
 h3 {
     font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    text-align: center;
-    padding: 3%;
+    font-weight: 500;
 	font-size: 15px;
 	color: #6b6b6b;
-	margin: 3%;
 }
 
 p {
     font-family: 'Lato', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
 	font-size: 14px;
-    text-align: justify;
-    padding: 5%;
-	margin: 3%;
 	color: #6b6b6b;
 }
 
@@ -55,8 +46,7 @@ a {
 * {
     border: 1px solid red !important;
 }
-/**/
-
+*/
 
 * {
     -webkit-box-sizing: border-box;
@@ -179,6 +169,13 @@ a {
 	background-color: #f1f1f1;
 }
 
+.white {
+	max-width: 600px;
+	background-color: #fff;
+	margin: 20px 40px 20px 40px;
+	padding: 10px 10px 10px 10px; 
+}
+
 .bottom {
 	background-color: #00bfa5;
 }
@@ -191,37 +188,24 @@ a {
 	
 }
 
-.list-post {
-	background-color: white;
-	padding: 12px;
-	margin: 7px;
+.h3-about {
+	text-align: center;
+	margin: 5px 10px 5px 10px;
+	padding: 5px 5px 5px 5px;
 }
 
-.list-post2 {
-	background-color: white;
-	padding: 0%;
-	margin: 0%;
+.p-about {
+	text-align: justify;
+	margin: 5px 10px 5px 10px;
+	padding: 5px 5px 5px 5px;
 }
 
-.p-blog {
-	margin: 0;
-	padding: 10px 0 10px 0;
+.h2-header {
+	text-align: justify;
+	margin: 5px 10px 30px 10px;
+	padding: 5px 5px 5px 5px;
 }
 
-.h3-post {
-	margin: 0;
-	padding: 0;
-	text-align: left;
-}
-
-.h3-date {
-	margin: 0;
-	padding: 0;
-	text-align: left;
-	font-size: 12px;
-	padding-top: 5px;
-}
-
-.p-post {
-	margin: 0;
+.none {
+	background-color: #f1f1f1;
 }

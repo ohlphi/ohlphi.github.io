@@ -2,18 +2,13 @@
 layout: default
 ---
 
-<ul class="nav">
-	<div class="col-11">
-	{% for projects in site.pages %}
-		{% if projects.category == 'projects' %}
-		<li class="list-post">
-
-			
-					<a href="{{site.baseurl}}{{projects.url}}" class="blog">{{projects.title}}</a>
-				{% endif %}
-		</li>
-		{% endfor %}
+<div class="col-11 white none">
 	{% include nav-about.html %}
-	
+</div>
+{% for projects in site.pages %}
+	{% if projects.category == 'projects' %}
+	<div class="col-11 white">
+		<a href="{{site.baseurl}}{{projects.url}}" class="blog">{{projects.title}}</a>
 	</div>
-</ul>
+	{% endif %}
+{% endfor %}

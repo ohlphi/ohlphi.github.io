@@ -2,12 +2,8 @@
 layout: default
 ---
 
-<ul class="nav">
-	<div class="col-11">
-		<li class="list-post">
-			<h3 class="h3-post blog">{{page.title}}</h3>
-			<h3 class="h3-date blog">{{ page.date | date: '%B %d, %Y' }}</h3>
-			<p class="p-blog">{{content}}</p>
-		</li>
-	</div>
-</ul>
+<div class="col-11 white">
+	<h3>{{page.title}}</h3>
+	<h3>{{ page.date | date: '%B %d, %Y' }}</h3>
+	<p>{{content}}</p>
+</div>
