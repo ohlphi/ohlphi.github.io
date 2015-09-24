@@ -48,6 +48,8 @@ a {
 }
 */
 
+
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -134,17 +136,17 @@ a {
 }
 
 .nav-top a {
-    font-size: 1.125rem;
+    font-size: 18px;
 	color: #fff;
 	margin: 0 10px 0 30px;
-	padding: 10%;
+	padding: 20px 20px 20px 20px;
 }
 
 .nav-bottom a {
-    font-size: 0.75rem;
+    font-size: 14px;
 	color: #fff;
 	margin: 0 10px 0 30px;
-	padding: 10%;
+	padding: 15px 15px 15px 15px;
 	
 }
 
@@ -209,3 +211,36 @@ a {
 .none {
 	background-color: #f1f1f1;
 }
+
+.more {
+	font-size: 12px;
+}
+
+.blog-title {
+	font-size: 16px;
+}
+
+.blog-date {
+	font-size: 12px;
+}
+
+/*@media screen and (min-width: 500px) {
+	body { background-color: blue; }
+}
+
+@media screen and (min-width: 800px) {
+	body { background-color: green; }
+}
+
+*/
+
+[alt=center] {
+  display: block;
+  margin: auto;
+}
+
+
+.wordwrap { 
+	word-wrap: break-word;
+}
+
