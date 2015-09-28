@@ -9,6 +9,7 @@ layout: default
 	{% if projects.category == 'projects' %}
 	<div class="col-11 white">
 		<a href="{{site.baseurl}}{{projects.url}}" class="blog">{{projects.title}}</a>
+		<p>{{projects.meta}}</p>
 	</div>
 	{% endif %}
 {% endfor %}
