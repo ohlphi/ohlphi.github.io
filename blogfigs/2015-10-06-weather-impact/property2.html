@@ -26,13 +26,13 @@
                                            <div class='container'>
                                            <input id='slider' type='range' min=1950 max=2011 ng-model='year' width=200>
                                            <span ng-bind='year'></span>
-                                           <div id='chartf7d8dd2abab' class='rChart datamaps'></div>          
+                                           <div id='chartf7d843fe60ea' class='rChart datamaps'></div>          
                                            </div>
                                            <script>
                                            function rChartsCtrl($scope){
                                            $scope.year = 1950;
                                            $scope.$watch('year', function(newYear){
-                                           mapchartf7d8dd2abab.updateChoropleth(chartParams.newData[newYear]);
+                                           mapchartf7d843fe60ea.updateChoropleth(chartParams.newData[newYear]);
                                            })
                                            }
                                            </script>    
@@ -41,7 +41,7 @@
 </script>
 <script>
   var chartParams = {
- "dom": "chartf7d8dd2abab",
+ "dom": "chartf7d843fe60ea",
 "width":    510,
 "height":    350,
 "scope": "usa",
@@ -19084,33 +19084,27 @@
 "fillKey": "0-1 M$" 
 } 
 },
-"geographyConfig": {
-  "popupTemplate":  function(geography, data){
-    return '<div class=hoverinfo><strong>' + geography.properties.name + 
-      ': ' + '$ ' + data.Value + '</strong></div>';
-  }  
-},
-"id": "chartf7d8dd2abab" 
+"id": "chartf7d843fe60ea" 
 }
-  chartParams.element = document.getElementById('chartf7d8dd2abab')
+  chartParams.element = document.getElementById('chartf7d843fe60ea')
   
   
-  var mapchartf7d8dd2abab = new Datamap(chartParams);
+  var mapchartf7d843fe60ea = new Datamap(chartParams);
   
   
     
   // draw a bubble map if specified
   if (chartParams.bubbles) {
     var bubbles = chartParams.bubbles
-    mapchartf7d8dd2abab.bubbles(bubbles)
+    mapchartf7d843fe60ea.bubbles(bubbles)
   }
   
   if (chartParams.labels){
-    mapchartf7d8dd2abab.labels()
+    mapchartf7d843fe60ea.labels()
   }
   
   if (chartParams.legend){
-    mapchartf7d8dd2abab.legend()
+    mapchartf7d843fe60ea.legend()
   }
   
   setProjection = function( element, options ) {
