@@ -305,26 +305,9 @@ section {
   *width: 16.6%;
 }
 
-/* Change number of boxes per row based on viewport width */
-@media (max-width: 580px) {
-  .row-icon .icon {
-    width: 100%;
-	text-align: left;
-	padding-left: 40px;
-  }
-}
-@media all and (min-width: 581px) and (max-width: 630px) {
-  .row-icon .icon {
-    width: 42.3%;
-	text-align: left;
-	padding-left: 40px;
-  }
 
-}
-@media all and (min-width: 631px) {
-  .row-icon .icon {
-    width: 15.6666667%;
-  }
+.row-icon .icon {
+	width: 19%;
 }
 
 /* Set height and color of boxes */
