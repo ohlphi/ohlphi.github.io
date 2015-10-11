@@ -2,14 +2,16 @@
 layout: default
 ---
 
-<div class="col-11 white none">
-	{% include nav-about.html %}
-</div>
-{% for projects in site.pages %}
-	{% if projects.category == 'projects' %}
-	<div class="col-11 white">
-		<a href="{{site.baseurl}}{{projects.url}}" class="blog">{{projects.title}}</a>
-		<p>{{projects.meta}}</p>
-	</div>
-	{% endif %}
-{% endfor %}
+<section>
+	<h2 class="latest-post">Projects</h2>
+	{% for projects in site.pages %}
+		{% if projects.category == 'projects' %}
+		<div class="col-12 blog-container">
+			<a href="{{site.baseurl}}{{projects.url}}"><h3>{{projects.title}}</h3></a>
+			<p class="blog-date">{{projects.date | date: '%B %d, %Y' }}</p>
+			<p>{{projects.meta}}</p>
+			<p class="more">Read more <a href="{{site.baseurl}}{{projects.url}}">here <i class="fa fa-arrow-right fa-1x ipos"></i></a></p>
+		</div>
+		{% endif %}
+	{% endfor %}
+</section>

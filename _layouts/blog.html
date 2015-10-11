@@ -2,12 +2,13 @@
 layout: default
 ---
 
-<div class="col-11 white wordwrap">
-	<h3 class="blog-title">{{page.title}}</h3>
-	<h3 class="blog-date">{{ page.date | date: '%B %d, %Y' }}</h3>
-	<br>
-	<br>
-	<p>{{content}}</p>
-	
+<section class= "wordwrap">
+	<div class="col-12 blog-container">
+		<h2>{{page.title}}</h2>
+		<p class="blog-date">{{ page.date | date: '%B %d, %Y' }}</p>
+		<br>
+		<br>
+		<p class="older">{{content}}</p>
+	</div>
 	{% include disqus.html %}
-</div>
+</section>

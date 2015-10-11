@@ -9,48 +9,46 @@
   <title>A site about big data, analysis and other bits and pieces</title>
   <link href="{{site.baseurl}}/css/common.css" rel="stylesheet">
   <meta name="description" content="{{page.meta}}">
-  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,100' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
   <body>
 	<div class="grid">
 		<div class="row">
-			<div class="col-3">
-			</div>
-			<div class="col-9 bottom">
-				<header>
-					{% include nav.html navclass="nav-top" %}
-				</header>
-			</div>
+			<header>
+				Where big data, analysis, R and other bits and pieces come to ponder.
+			</header>
+		</div>
+		<div class="col-12">
+			{% include nav.html navclass="nav-top" %}
 		</div>
 		
 		<div class="row">
-			<div class="col-3">
-				<header>
-					<h2 class="h2-header">My two cents on big data, analysis, R and other bits and pieces.</h2>
-				</header>
-				<div class="col-12">
-					<div class="about">
-						<img src="{{site.baseurl}}/img/about.jpg" alt="Philip Ohlsson">
-					</div>
-				</div>
-				<h3 class="h3-about">About me</h3>
-				<p class="p-about">A mechanical engineer who turned into an analyst, who is now working towards becoming a data scientist. I have always been interested in statistics, math and solving complex problems, and over the last year I have started to dig deeper into the world of big data.<br>Most of my work will be posted on this website for anyone to read.<br>If you want to know more about me, you can click <a href="{{site.baseurl}}/about/">here.</a></p>
-			</div>
-			<div class="col-9 right">
-					{{content}}
+			<div class="col-12">
+				{{content}}
 			</div>				
 		</div>
-		<div class="row">
-			<div class="col-3">
-			</div>
-			<div class="col-9 bottom">
-				<footer>
-					{% include nav.html navclass="nav-bottom" %}
-				</footer>
+		<div class="row under"></div>
+		<div class="color">
+			<div class="row-icon">
+				<div class="icon"><a href="mailto:philip.ohlsson@gmail.com?Subject=statpond" target="_blank"><i class="fa fa-envelope"></i></a></div>
+				<div class="icon"><a href="https://www.facebook.com/philip.ohlsson.54" target="_blank"><i class="fa fa-facebook-square fa-1x"></i></a></div>
+				<div class="icon"><a href="https://github.com/ohlphi" target="_blank"><i class="fa fa-github-square"></i></a></div>
+				<div class="icon"><a href="https://plus.google.com/117407581825220025377" target="_blank"><i class="fa fa-google-plus fa-1x"></i></a></div>
+				<div class="icon"><a href="https://nl.linkedin.com/pub/philip-ohlsson/11/366/795" target="_blank"><i class="fa fa-linkedin-square"></i></a></div>
+				<div class="icon"><a href="https://twitter.com/ohlphi" target="_blank"><i class="fa fa-twitter fa-1x"></i></a></div>
 			</div>
 		</div>
+		<div class="row-bottom"></div>
 	</div>
+		<script>
+		$('.handle').on('click', function(){
+			$('nav ul').toggleClass('showing')
+		});	
+	</script>
 	{% include google-analytics.html %}
   </body>
 </html>

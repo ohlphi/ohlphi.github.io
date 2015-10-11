@@ -1,72 +1,120 @@
-html {
+body {
 	margin: 0;
 	padding: 0;
-	
-	font-family: 'Roboto', arial,sans-serif;
-
+	font-family: 'Roboto', sans-serif;
+	width: 100%;
+	/*padding: 1% 1% 0% 1%;*/
 }
-
-h2 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 600;
-	font-size: 15px;
-	color: #6b6b6b;
-}
-
 
 h3 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-	font-size: 15px;
-	color: #6b6b6b;
+	font-weight: 500;
+	margin: 0;
+	padding: 0;
 }
 
-p {
-    font-family: 'Lato', sans-serif;
-    font-weight: 400;
-	font-size: 14px;
-	color: #6b6b6b;
+header{
+	max-width: 100%;
+	background: #00bfa5;
+	padding: 40px;
+	color: white;
+	text-align: center;
+	text-transform: uppercase;
+	line-height: 1.5em;
+	font-size: 2em;
 }
 
-.nav-current {
-	text-decoration: none;
-	font-weight: 200;
+.header2{
+	max-width: 100%;
+	background: #00bfa5;
+	margin-bottom: -40px;
+	text-align: left;
+	line-height: 1.5em;
+	font-size: 1.3em;
+	color: white;
+	/*padding: 20px 40px;*/
+	
 }
+
 
 .current {
-	text-decoration: underline;
-}
-
-a {
-	text-decoration: underline;
-	color: #6b6b6b;
+	text-decoration: none;
 }
 
 /*
 * {
     border: 1px solid red !important;
+}*/
+
+
+nav ul {
+	max-width: 100%;
+	background-color: #009884;
+	overflow: hidden;
+	color: white;
+	padding: 0;
+	text-align: center;
+	margin: 0;
+	font-size: 1.2em;
+	-webkit-transition: max-height 0.4s;
+	-ms-transition: max-height 0.4s;
+	-moz-transition: max-height 0.4s;
+	-o-transition: max-height 0.4s;
+	transition: max-height 0.4s;
 }
-*/
+
+nav ul li {
+	display: inline-block;
+	padding: 20px;
+	margin: 0px 20px;
+}
+
+
+nav ul li:hover {
+	background-color: #007263;
+}
+
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+section {
+	line-height: 1.5em;
+	font-size: 0.9em;
+	padding: 20px 40px;
+	max-width: 80	%;
+	margin: 0 auto;
+}
+
+.section2 {
+	line-height: 1.5em;
+	font-size: 0.9em;
+	padding: 20px 40px;
+	max-width: 80	%;
+	margin: 0 auto;
+}
 
 
 
+/*
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
 }
-
+*/
 
 .grid {
     margin: 0 auto;
     max-width: 1000px;
     width: 100%;
+	background-color: #fafafa;
 }
 
 .row {
     width: 100%;
-    margin-bottom: 7px;
     display: flex;
 }
 
@@ -126,113 +174,96 @@ a {
     width: 100%;
 }
 
-.nav {
-    list-style-type: none;
-}
-
-
-.nav > li {
-    display: inline-block;
-}
-
-.nav-top a {
-    font-size: 18px;
-	color: #fff;
-	margin: 0 10px 0 30px;
-	padding: 20px 20px 20px 20px;
-}
-
-.nav-bottom a {
-    font-size: 14px;
-	color: #fff;
-	margin: 0 10px 0 30px;
-	padding: 15px 15px 15px 15px;
-	
-}
-
-/*
-.nav-menu {
-	padding: 10px 40px 10px 10px;
-}
-*/
-
 .about img {
   border-radius: 50%;
-  max-width: 130px;
-  /*height: 130px;*/
+  max-width: 120px;
   width: 100%;
   height: auto;
-  margin: auto;
   display: block;
   vertical-align: top;
+  margin: 0 auto;
+  padding: 3px;
+  background-color: white;
 }
 
-.right {
-	background-color: #f1f1f1;
+.about2 img {
+  border-radius: 50%;
+  max-width: 100%;
+  max-height: 130px;
+  height: auto;
+  display: block;
+  vertical-align: top;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: -65px;
+  position: center;
+  padding: 0;
+  background-color: white;
+  border: 1px solid #dadada;
 }
 
-.white {
-	max-width: 600px;
-	background-color: #fff;
-	margin: 20px 40px 20px 40px;
-	padding: 10px 10px 10px 10px; 
+
+.handle {
+	width: 100%;
+	background: #008573;
+	text-align: right;
+	box-sizing: border-box;
+	padding: 10px 10px;
+	height: 56px;
+	cursor: pointer;
+	color: white;
+	display: none;
 }
 
-.bottom {
-	background-color: #00bfa5;
+
+#cpBtn {
+	float: right;
+	width: 22px;
+	height: 30px;
+	background: linear-gradient (#FFF, #DDD);
+	/*border: #AAA 1px solid;*/
+	padding: 2px 5px;
+	border-radius: 2px;
+	cursor: pointer;
+	transition: border 0.3s linear 0s;
 }
 
-.blog {
-	font-size: 18px;
-	font-weight: 200;
-	color: #404040;
-	text-decoration: none;
-	
+#cpBtn > div {
+	width: 20px;
+	height: 4px;
+	background: white;
+	margin: 3px 0px;
+	border-radius: 2px;
+	transition: background 0.3s linear 0s;
 }
 
-.h3-about {
-	text-align: center;
-	margin: 5px 10px 5px 10px;
-	padding: 5px 5px 5px 5px;
+/*#cpBtn:hover {
+	border: #06F 1px solid;
+}*/
+
+#cpBtn:hover div {
+	background: #00bfa5;
 }
 
-.p-about {
-	text-align: justify;
-	margin: 5px 10px 5px 10px;
-	padding: 5px 5px 5px 5px;
+
+@media screen and (max-width: 580px) {
+	nav ul {
+		max-height: 0;
+	}
+	.showing {
+		max-height: 20em;
+	}
+	nav ul li {
+		box-sizing: border-box;
+		width: 100%;
+		padding: 15px;
+		text-align: left;
+	}
+	.handle {
+		display: block;
+	}
 }
 
-.h2-header {
-	text-align: justify;
-	margin: 5px 10px 30px 10px;
-	padding: 5px 5px 5px 5px;
-}
-
-.none {
-	background-color: #f1f1f1;
-}
-
-.more {
-	font-size: 12px;
-}
-
-.blog-title {
-	font-size: 16px;
-}
-
-.blog-date {
-	font-size: 12px;
-}
-
-/*@media screen and (min-width: 500px) {
-	body { background-color: blue; }
-}
-
-@media screen and (min-width: 800px) {
-	body { background-color: green; }
-}
-
-*/
 
 [alt=center] {
   display: block;
@@ -244,3 +275,114 @@ a {
 	word-wrap: break-word;
 }
 
+.navbar-text > a {
+	color: #00795f;
+	text-decoration: none;
+}
+
+.under {
+	height: 2px;
+	background-color: #009884;
+	margin-bottom: 5px;
+}
+
+.color {
+	  background-color: #009884;
+}
+
+
+.row-icon .icon {
+  /* The vertical alignment magic */
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #009884;
+  
+  width: 100%; /* Needs width for inline-block */
+ 
+  /* Fix for IE <= 7 */
+  *display: inline;
+  *zoom:1;
+  *width: 16.6%;
+}
+
+/* Change number of boxes per row based on viewport width */
+@media (max-width: 580px) {
+  .row-icon .icon {
+    width: 100%;
+	text-align: left;
+	padding-left: 40px;
+  }
+}
+@media all and (min-width: 581px) and (max-width: 630px) {
+  .row-icon .icon {
+    width: 42.3%;
+	text-align: left;
+	padding-left: 40px;
+  }
+
+}
+@media all and (min-width: 631px) {
+  .row-icon .icon {
+    width: 15.6666667%;
+  }
+}
+
+/* Set height and color of boxes */
+.icon {
+	max-width: 100%;
+	background-color: #009884;
+	overflow: hidden;
+	color: white;
+	padding: 0;
+	text-align: center;
+	margin: 0;
+	font-size: 1.2em;
+}
+
+.icon {
+	display: inline-block;
+	padding: 10px 0px;
+	margin: 0;
+}
+
+
+.icon:hover {
+	background-color: #007263;
+}
+
+.row-bottom {
+	height:20px;
+}
+
+.ipos {
+	vertical-align: middle;
+}
+
+.blog-container {
+	border: 1px solid #dadada;
+	border-radius: 10px;
+	margin-bottom: 30px;
+	padding: 10px;
+	
+}
+
+.blog-date, .more {
+	font-weight: 300;
+}
+
+h2 {
+	font-weight: 300;
+
+}
+
+.latest-post {
+	padding: 10px;
+}
+
+.older, .blog-post {
+	padding: 10px;
+}
+
+p {
+	font-weight: 400;
+}

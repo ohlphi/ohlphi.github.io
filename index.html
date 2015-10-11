@@ -2,12 +2,19 @@
 layout: default
 ---
 
-
-{% for blog in site.categories.blog limit:3 %}
-<div class="col-11 white">
-	<a href="{{site.baseurl}}{{blog.url}}" class="blog">{{blog.title}}</a>
-	<p class="p-blog">{{blog.meta}}</p>
-	<p class="more">Read more <a href="{{site.baseurl}}{{blog.url}}">here</a></p>
-</div>
-{% endfor %}
-
+<section>
+	<h2 class="latest-post">Latest posts</h2>
+	{% for blog in site.categories.blog limit:3 %}
+	<div class="col-12 blog-container">
+		<a href="{{site.baseurl}}{{blog.url}}"><h3>{{blog.title}}</h3></a>
+		<p class="blog-date">{{ blog.date | date: '%B %d, %Y' }}</p>
+		<p>{{blog.meta}}</p>
+		<p class="more">Read more <a href="{{site.baseurl}}{{blog.url}}">here <i class="fa fa-arrow-right fa-1x ipos"></i></a></p>
+	</div>
+	{% endfor %}
+	<p class="more older">You can find older posts <a href="{{site.baseurl}}/blog/">here <i class="fa fa-arrow-right fa-1x ipos"></i></a></p>
+</section>
+<br>
+<br>
+<br>
+{% include defaultfront.html %}
