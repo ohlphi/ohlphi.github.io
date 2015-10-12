@@ -75,9 +75,15 @@ nav ul li:hover {
 
 
 a {
+	text-decoration: underline;
+	color: inherit;
+}
+
+.nav-front {
 	text-decoration: none;
 	color: inherit;
 }
+
 
 section {
 	line-height: 1.5em;

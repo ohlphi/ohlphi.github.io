@@ -6,8 +6,6 @@ layout: default
 	<div class="col-12 blog-container">
 		<h2>{{page.title}}</h2>
 		<p class="blog-date">{{ page.date | date: '%B %d, %Y' }}</p>
-		<br>
-		<br>
 		<p class="older">{{content}}</p>
 	</div>
 	{% include disqus.html %}

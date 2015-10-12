@@ -8,7 +8,7 @@ layout: default
 	<h2 class="latest-post">The blog archive</h2>
 	{% for blog in site.categories.blog %}
 	<div class="col-12 blog-container">
-		<a href="{{site.baseurl}}{{blog.url}}"><h3>{{blog.title}}</h3></a>
+		<a href="{{site.baseurl}}{{blog.url}}" class="nav-front"><h3>{{blog.title}}</h3></a>
 		<p class="blog-date">{{blog.date | date: '%B %d, %Y' }}</p>
 		<p>{{blog.meta}}</p>
 		<p class="more">Read more <a href="{{site.baseurl}}{{blog.url}}">here <i class="fa fa-arrow-right fa-1x ipos"></i></a></p>

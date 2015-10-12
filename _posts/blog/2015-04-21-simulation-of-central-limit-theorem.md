@@ -3,7 +3,7 @@ layout: projects
 title: Simulation of exponential distribution with the Central Limit Theorem
 meta: This project will investigate the exponential distribution in R and compare it with the Central Limit Theorem. The exponential distribution will be simulated in R with rexp(n, lambda) where lambda is the rate parameter. The mean of exponential distribution is 1/lambda and the standard deviation is also 1/lambda. We set lambda = 0.2 for all of the simulations.
 date: April 21, 2015
-category: projects
+category: blog
 ---
 # Statistical Inference - Project Assignment 1
 #### Philip Ohlsson

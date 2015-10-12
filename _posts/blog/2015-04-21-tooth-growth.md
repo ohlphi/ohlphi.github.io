@@ -2,7 +2,7 @@
 layout: projects
 title: Tooth growth
 meta: This project will analyze the ToothGrowth data in the R datasets package, perform some basic exploratory data analyses and provide a basic summary of the data.
-category: projects
+category: blog
 date: April 21, 2015
 ---
 # Statistical Inference - Project Assignment 2
