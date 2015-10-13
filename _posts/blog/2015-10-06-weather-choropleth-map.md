@@ -12,7 +12,7 @@ date: October 6, 2015
 	<iframe src="{{site.baseurl}}/blogfigs/2015-10-06-weather-impact/injuries.html" scrolling='no' seamless frameborder="0" class="rChart datamaps"></iframe>
 </div>
 
-<style>div.container2{ position: relative; width: 100%; height: 0; padding-bottom: 70%;}</style>
+<style>div.container2{ position: relative; width: 100%; height: 0; padding-bottom: 80%;}</style>
 <style>iframe.rChart{ position: absolute; top: 0; left: 0; width: 100%; height: 100%;}</style>
 
 
