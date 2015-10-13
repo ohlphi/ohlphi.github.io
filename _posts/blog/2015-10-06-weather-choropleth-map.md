@@ -6,13 +6,15 @@ category: blog
 date: October 6, 2015
 ---
 
-<iframe src='{{site.baseurl}}/blogfigs/2015-10-06-weather-impact/injuries.html' scrolling='no' seamless
-class='rChart datamaps '
-id=iframe-chart_1 
-frameBorder = "0"
-></iframe>
 
-<style>iframe.rChart{ width: 100%; height: 430px;}</style>
+
+<div class="container2">
+	<iframe src="{{site.baseurl}}/blogfigs/2015-10-06-weather-impact/injuries.html" scrolling='no' seamless frameborder="0" class="rChart datamaps"></iframe>
+</div>
+
+<style>div.container2{ position: relative; width: 100%; height: 0; padding-bottom: 70%;}</style>
+<style>iframe.rChart{ position: absolute; top: 0; left: 0; width: 100%; height: 100%;}</style>
+
 
 In this post I will show how it is possible in R to use data from the U.S. National Oceanic and Atmospheric Administration's (NOAA) database to make an interactive choropleth map that shows the impact on public health (injuries & fatalities) and economy (crop & property damage) for each states, ranging from 1950-2011, like the one I made above (showing the number of people injured due to weather events). The data I will be using can be downloaded from <a href="https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2">here</a> (be aware, it is almost 50MB).
 
@@ -475,16 +477,18 @@ i1
 {% endhighlight %}
 
 Our map should look something like this for fatalities: 
+<div class="container2">
 	<iframe src='{{site.baseurl}}/blogfigs/2015-10-06-weather-impact/fatalities2.html' scrolling='no' seamless
 	class='rChart datamaps '
 	id=iframe-chart_2 
 	frameBorder = "0"
 	></iframe>
+</div>
 
-<style>iframe.rChart{ width: 100%; height: 430px;}</style>
 
 
-<h3><strong>Second map - Property Damage</strong></h3>
+
+<h3>Second map - Property Damage</h3>
 
 Actually, I will only do another map, which will be the Property damage (the other maps can be done by simply replacing the event):
 
@@ -510,13 +514,15 @@ i2
 {% endhighlight %}
 
 And there we have our second map of property damage: 
+<div class="container2">
 	<iframe src='{{site.baseurl}}/blogfigs/2015-10-06-weather-impact/property2.html' scrolling='no' seamless
 	class='rChart datamaps '
 	id=iframe-chart_3 
 	frameBorder = "0"
 	></iframe>
+</div>
 
-<style>iframe.rChart{ width: 100%; height: 430px;}</style>
+
 
 
 There you have it: Two interactive choropleth map of the US, stretching from 1950-2011, showing us the number of fatalities and the total property damage due to weather events. The next steps will be some finetuning before we save our maps into html. We could stop here, but I would like to some finetuning.
@@ -592,25 +598,29 @@ The place where the code should be added is right after the `WY` and just before
 {% endhighlight %}
 
 If you open up your maps in your browser, you will now see that if you hover over a state, you will see the numbers behind the human or economic impact and that there is a comma separate grouping three digits, and that whenever a state has missing values, the state will be in a gray color:
+</br>
+</br>
 
-<h3><strong>Fatalities</strong></h3>
-<iframe src='{{site.baseurl}}/blogfigs/2015-10-06-weather-impact/fatalities.html' scrolling='no' seamless
-class='rChart datamaps '
-id=iframe-chart_4 
-frameBorder = "0"
-></iframe>
+<h3>Fatalities</h3>
+<div class="container2">
+	<iframe src='{{site.baseurl}}/blogfigs/2015-10-06-weather-impact/fatalities.html' scrolling='no' seamless
+	class='rChart datamaps '
+	id=iframe-chart_4 
+	frameBorder = "0"
+	></iframe>
+</div>
 
-<style>iframe.rChart{ width: 100%; height: 430px;}</style>
 
-
-<h3><strong>Property damage</strong></h3>
-<iframe src='{{site.baseurl}}/blogfigs/2015-10-06-weather-impact/property.html' scrolling='no' seamless
-class='rChart datamaps '
-id=iframe-chart_5 
-frameBorder = "0"
-></iframe>
+<h3>Property damage</h3>
+<div class="container2">
+	<iframe src='{{site.baseurl}}/blogfigs/2015-10-06-weather-impact/property.html' scrolling='no' seamless
+	class='rChart datamaps '
+	id=iframe-chart_5 
+	frameBorder = "0"
+	></iframe>
+</div>
 	
-<style>iframe.rChart{ width: 100%; height: 430px;}</style>
+
  
 
 And that is it, we are done! Now you can show off your new interactive choropleth maps to your friends, colleagues and neighbours, or you can play with them in your R environment or embed them and share them on your blogs, like I did :D 

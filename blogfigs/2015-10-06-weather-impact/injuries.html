@@ -2,7 +2,7 @@
 <meta charset = 'utf-8'>
 <html>
   <head>
-    
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,100' rel='stylesheet' type='text/css'>
     <script src='http://d3js.org/d3.v3.min.js' type='text/javascript'></script>
     <script src='http://d3js.org/topojson.v1.min.js' type='text/javascript'></script>
     <script src='http://datamaps.github.io/scripts/datamaps.all.min.js' type='text/javascript'></script>
@@ -14,8 +14,8 @@
       display: block;
       margin-left: auto; 
       margin-right: auto;
-      width: 510px;
-      height: 350px;
+      width: 100%;
+      height: 100%;
     }  
     </style>
     
@@ -23,27 +23,31 @@
   <body ng-app ng-controller='rChartsCtrl'>
     
     
-                                           <div class='container'>
-                                           <input id='slider' type='range' min=1950 max=2011 ng-model='year' width=200>
-                                           <span ng-bind='year'></span>
-                                           <div id='chartf7d8241ca05c' class='rChart datamaps'></div>          
-                                           </div>
-                                           <script>
-                                           function rChartsCtrl($scope){
-                                           $scope.year = 1950;
-                                           $scope.$watch('year', function(newYear){
-                                           mapchartf7d8241ca05c.updateChoropleth(chartParams.newData[newYear]);
-                                           })
-                                           }
-                                           </script>    
+     <div class='container'>
+     <input id='slider' type='range' min=1950 max=2011 ng-model='year' width=200>
+     <span ng-bind='year'></span>
+     <div id='chart74c9147db5d9' class='rChart datamaps'></div>          
+     </div>
+     <script>
+     function rChartsCtrl($scope){
+     $scope.year = 1950;
+     $scope.$watch('year', function(newYear){
+     mapchart74c9147db5d9.updateChoropleth(chartParams.newData[newYear]);
+     })
+     }
+     window.addEventListener('resize', function() {
+      mapchart74c9147db5d9.resize();
+     });
+     </script>    
     <script id='popup-template' type='text/x-handlebars-template'>
     
 </script>
 <script>
   var chartParams = {
- "dom": "chartf7d8241ca05c",
-"width":    510,
-"height":    350,
+ "dom": "chart74c9147db5d9",
+"width":    null,
+"height":    null,
+"responsive": true,
 "scope": "usa",
 "fills": {
  "0-10": "#F1EEF6",
@@ -19090,27 +19094,27 @@
       ': ' + data.Value + '</strong></div>';
   }  
 },
-"id": "chartf7d8241ca05c" 
+"id": "chart74c9147db5d9" 
 }
-  chartParams.element = document.getElementById('chartf7d8241ca05c')
+  chartParams.element = document.getElementById('chart74c9147db5d9')
   
   
-  var mapchartf7d8241ca05c = new Datamap(chartParams);
+  var mapchart74c9147db5d9 = new Datamap(chartParams);
   
   
     
   // draw a bubble map if specified
   if (chartParams.bubbles) {
     var bubbles = chartParams.bubbles
-    mapchartf7d8241ca05c.bubbles(bubbles)
+    mapchart74c9147db5d9.bubbles(bubbles)
   }
   
   if (chartParams.labels){
-    mapchartf7d8241ca05c.labels()
+    mapchart74c9147db5d9.labels()
   }
   
   if (chartParams.legend){
-    mapchartf7d8241ca05c.legend()
+    mapchart74c9147db5d9.legend()
   }
   
   setProjection = function( element, options ) {
@@ -19130,6 +19134,14 @@
 <style>
 .datamaps {
   position: relative;
+}
+.datamaps-legend {
+  font-size: 8px;
+  width: 100%;
+}
+.ng-binding {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
 }
 </style>
     
