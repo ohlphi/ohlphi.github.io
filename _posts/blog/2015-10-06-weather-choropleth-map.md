@@ -12,6 +12,12 @@ id=iframe-chart_1
 frameBorder = "0"
 ></iframe>
 
+<iframe src='{{site.baseurl}}/blogfigs/2015-10-06-weather-impact/injuries3.html' scrolling='no' seamless
+class='rChart datamaps '
+id=iframe-chart_1 
+frameBorder = "0"
+></iframe>
+
 
 <style>iframe.rChart{ width: 100%; height: 430px;}</style>
 
