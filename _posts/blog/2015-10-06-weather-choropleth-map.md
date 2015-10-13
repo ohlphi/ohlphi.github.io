@@ -12,13 +12,6 @@ id=iframe-chart_1
 frameBorder = "0"
 ></iframe>
 
-<iframe src='{{site.baseurl}}/blogfigs/2015-10-06-weather-impact/fatalities3.html' scrolling='no' seamless
-class='rChart datamaps '
-id=iframe-chart_1 
-frameBorder = "0"
-></iframe>
-
-
 <style>iframe.rChart{ width: 100%; height: 430px;}</style>
 
 In this post I will show how it is possible in R to use data from the U.S. National Oceanic and Atmospheric Administration's (NOAA) database to make an interactive choropleth map that shows the impact on public health (injuries & fatalities) and economy (crop & property damage) for each states, ranging from 1950-2011, like the one I made above (showing the number of people injured due to weather events). The data I will be using can be downloaded from <a href="https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2">here</a> (be aware, it is almost 50MB).
