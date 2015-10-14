@@ -141,14 +141,14 @@ head(data)
 <br>
 
 It is quite a hefty file (>900k rows and 37 different variables), however we are really only interested in the following six variables:<br>
-1.`BGN_DATE`: Date of the weather event,<br>
-2.`STATE`,<br>
-3.`FATALITIES`,<br>
-4.`INJURIES`,<br>
-5.`PROPDMG`: Property damage,<br>
-6.`PROPDMGEXP`: Exponential value of the property damage,<br>
-7.`CROPDMG`: Crop damage &<br>
-8.`CROPDMGEXP`: Exponential value of the property damage.<br>
+- `BGN_DATE`: Date of the weather event,<br>
+- `STATE`,<br>
+- `FATALITIES`,<br>
+- `INJURIES`,<br>
+- `PROPDMG`: Property damage,<br>
+- `PROPDMGEXP`: Exponential value of the property damage,<br>
+- `CROPDMG`: Crop damage &<br>
+- `CROPDMGEXP`: Exponential value of the property damage.<br>
 <br>
 Select the variables above and create a new variable in `data` and call it `Year`, by extracting the year from the column `BGN_DATE`. Afterwards, we take out `BGN_DATE`, as we are not interested in the specific date, but only the year of the weather event:
 
