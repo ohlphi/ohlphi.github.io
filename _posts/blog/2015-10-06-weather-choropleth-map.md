@@ -28,6 +28,7 @@ library(lubridate)
 {% endhighlight %}
 
 `dplyr` and `lubridate` will be used for cleaning the data. We will use some additional packages for the making of the choropleth maps, but this will require `plyr`, which might interfere with the `dplyr`. Therefore, we will load these later, once we are done cleaning the data.
+
 </br>
 <h3>Processing the data</h3>
 </br>
@@ -143,23 +144,16 @@ head(data)
 </br>
 It is quite a hefty file (>900k rows and 37 different variables), however we are really only interested in the following variables: 
 
+-`BGN_DATE`: Date of the weather event,
+-`STATE`,
+-`FATALITIES`,
+-`INJURIES`,
+-`PROPDMG`: Property damage,
+-`PROPDMGEXP`: Exponential value of the property damage,
+-`CROPDMG`: Crop damage &
+-`CROPDMGEXP`: Exponential value of the property damage.
 
-- `BGN_DATE`: Date of the weather event,
- 
-- `STATE`,
- 
-- `FATALITIES`, 
-
-- `INJURIES`, 
-
-- `PROPDMG`: Property damage, 
-
-- `PROPDMGEXP`: Exponential value of the property damage,
-
-- `CROPDMG`: Crop damage & 
-
-- `CROPDMGEXP`: Exponential value of the property damage.
-
+</br>
 </br>
 
 Select the variables above and create a new variable in `data` and call it `Year`, by extracting the year from the column `BGN_DATE`. Afterwards, we take out `BGN_DATE`, as we are not interested in the specific date, but only the year of the weather event:
@@ -351,8 +345,11 @@ We are now done with cleaning up the data. We have our observations based on the
 </br>
 That is about it for cleaning up the data. Next up, making a choropleth map!
 </br>
+
 <h3>Making the interactive map</h3>
+
 </br>
+
 Now the fun stuff: Making the interactive map! 
 We still need to arrange the data in order to be able to read it into our choropleth map. We will add all the events into one column. Instead of having 3,100 rows with 6 variables, we will arrange it into 12,400 rows with 4 variables: State, Year, Event and value. We will use `melt` from the `reshape2` package and we will also load in the packages for making the choropleth maps:
 
@@ -624,7 +621,7 @@ The place where the code should be added is right after the `WY` and just before
 </br>
 If you open up your maps in your browser, you will now see that if you hover over a state, you will see the numbers behind the human or economic impact and that there is a comma separate grouping three digits, and that whenever a state has missing values, the state will be in a gray color:
 </br>
-
+</br>
 <h3>Fatalities</h3>
 </br>
 <div class="container2">
@@ -652,7 +649,10 @@ If you open up your maps in your browser, you will now see that if you hover ove
 
 And that is it, we are done! Now you can show off your new interactive choropleth maps to your friends, colleagues and neighbours, or you can play with them in your R environment or embed them and share them on your blogs, like I did :D 
 </br>
+
 I hope you enjoyed it, more posts will be coming shortly.
+
 </br>
+
 For any further questions, please feel free to <a href="{{site.baseurl}}/contact/">contact me</a> or leave a comment. You can also see the code for the maps I made <a href="https://github.com/ohlphi/weather-choropleth-maps">here</a>. 
 
