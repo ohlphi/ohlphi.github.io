@@ -29,7 +29,6 @@ library(lubridate)
 
 `dplyr` and `lubridate` will be used for cleaning the data. We will use some additional packages for the making of the choropleth maps, but this will require `plyr`, which might interfere with the `dplyr`. Therefore, we will load these later, once we are done cleaning the data.
 
-
 <h3>Processing the data</h3>
 
 Let us start with downloading the data and save it in `data`:
