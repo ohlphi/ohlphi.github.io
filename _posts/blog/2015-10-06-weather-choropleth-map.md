@@ -652,7 +652,5 @@ And that is it, we are done! Now you can show off your new interactive choroplet
 
 I hope you enjoyed it, more posts will be coming shortly.
 
-</br>
-
 For any further questions, please feel free to <a href="{{site.baseurl}}/contact/">contact me</a> or leave a comment. You can also see the code for the maps I made <a href="https://github.com/ohlphi/weather-choropleth-maps">here</a>. 
 
