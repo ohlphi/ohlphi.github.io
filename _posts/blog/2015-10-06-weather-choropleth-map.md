@@ -612,6 +612,6 @@ If you open up your maps in your browser, you will now see that if you hover ove
 <br>
 And that is it, we are done! Now you can show off your new interactive choropleth maps to your friends, colleagues and neighbours, or you can play with them in your R environment or embed them and share them on your blogs, like I did :D<br>
 <br>
-I hope you enjoyed it, more posts will be coming shortly.<br>
+I hope you enjoyed this post, more will be coming shortly.<br>
 <br>
 For any further questions, please feel free to <a href="{{site.baseurl}}/contact/">contact me</a> or leave a comment. You can also see the code for the maps I made <a href="https://github.com/ohlphi/weather-choropleth-maps">here</a>.
