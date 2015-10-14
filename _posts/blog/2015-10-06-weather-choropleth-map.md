@@ -140,16 +140,15 @@ head(data)
 <br>
 <br>
 
-It is quite a hefty file (>900k rows and 37 different variables), however we are really only interested in the following variables:
--.`BGN_DATE`: Date of the weather event,
--.`STATE`,
--.`FATALITIES`,
--.`INJURIES`,
--.`PROPDMG`: Property damage,
--.`PROPDMGEXP`: Exponential value of the property damage,
--.`CROPDMG`: Crop damage &
--.`CROPDMGEXP`: Exponential value of the property damage.
-
+It is quite a hefty file (>900k rows and 37 different variables), however we are really only interested in the following six variables:<br>
+1.`BGN_DATE`: Date of the weather event,<br>
+2.`STATE`,<br>
+3.`FATALITIES`,<br>
+4.`INJURIES`,<br>
+5.`PROPDMG`: Property damage,<br>
+6.`PROPDMGEXP`: Exponential value of the property damage,<br>
+7.`CROPDMG`: Crop damage &<br>
+8.`CROPDMGEXP`: Exponential value of the property damage.<br>
 <br>
 Select the variables above and create a new variable in `data` and call it `Year`, by extracting the year from the column `BGN_DATE`. Afterwards, we take out `BGN_DATE`, as we are not interested in the specific date, but only the year of the weather event:
 
@@ -323,9 +322,9 @@ head(data)
 {% endhighlight %}
 <br>
 <br>
-We are now done with cleaning up the data. We have our observations based on the four events (Crop damage, Fatalities, Injuries and Property damage) and we have input for each state per year ranging from 1950-2011. In the cases where we do not have any data we have given them the value `NA` instead of 0. The reason behind it is that it is uncertain whether the NA's are due to no reported observations or that information is simply missing. Some states have reported values despite no human nor economic impact (all values are 0). Therefore, we will make a distinction between the observed rows and the missing ones.
+We are now done with cleaning up the data. We have our observations based on the four events (Crop damage, Fatalities, Injuries and Property damage) and we have input for each state per year ranging from 1950-2011. In the cases where we do not have any data we have given them the value `NA` instead of 0. The reason behind it is that it is uncertain whether the NA's are due to no reported observations or that information is simply missing. Some states have reported values despite no human nor economic impact (all values are 0). Therefore, we will make a distinction between the observed rows and the missing ones.<br>
 <br>
-That is about it for cleaning up the data. Next up, making a choropleth map!
+That is about it for cleaning up the data. Next up, making a choropleth map!<br>
 <br>
 <h3>Making the interactive map</h3>
 <br>
@@ -587,7 +586,7 @@ The place where the code should be added is right after the `WY` and just before
 {% endhighlight %}
 <br>
 <br>
-If you open up your maps in your browser, you will now see that if you hover over a state, you will see the numbers behind the human or economic impact and that there is a comma separate grouping three digits, and that whenever a state has missing values, the state will be in a gray color:
+If you open up your maps in your browser, you will now see that if you hover over a state, you will see the numbers behind the human or economic impact and that there is a comma separate grouping three digits, and that whenever a state has missing values, the state will be in a gray color:<br>
 <br>
 <h3>Fatalities</h3>
 <br>
@@ -611,8 +610,8 @@ If you open up your maps in your browser, you will now see that if you hover ove
 </div>
 <br>
 <br>
-And that is it, we are done! Now you can show off your new interactive choropleth maps to your friends, colleagues and neighbours, or you can play with them in your R environment or embed them and share them on your blogs, like I did :D
+And that is it, we are done! Now you can show off your new interactive choropleth maps to your friends, colleagues and neighbours, or you can play with them in your R environment or embed them and share them on your blogs, like I did :D<br>
 <br>
-I hope you enjoyed it, more posts will be coming shortly.
+I hope you enjoyed it, more posts will be coming shortly.<br>
 <br>
 For any further questions, please feel free to <a href="{{site.baseurl}}/contact/">contact me</a> or leave a comment. You can also see the code for the maps I made <a href="https://github.com/ohlphi/weather-choropleth-maps">here</a>.
