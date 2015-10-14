@@ -29,11 +29,10 @@ library(lubridate)
 
 `dplyr` and `lubridate` will be used for cleaning the data. We will use some additional packages for the making of the choropleth maps, but this will require `plyr`, which might interfere with the `dplyr`. Therefore, we will load these later, once we are done cleaning the data.
 
-</br>
-<h3>Processing the data</h3>
-</br>
-Let us start with downloading the data and save it in `data`:
 
+<h3>Processing the data</h3>
+
+Let us start with downloading the data and save it in `data`:
 
 {% highlight r %}
 if (!file.exists("stormdata.csv.bz2" )){
@@ -44,14 +43,13 @@ if (!file.exists("stormdata.csv.bz2" )){
 # Read the file:
 data<-read.csv(bzfile("./stormdata.csv.bz2"), sep=",")
 {% endhighlight %}
-</br>
-</br>
+
+
 Let's check what the data looks like:
 
 {% highlight r %}
 str(data)
 {% endhighlight %}
-
 
 
 {% highlight text %}
@@ -96,11 +94,9 @@ str(data)
 {% endhighlight %}
 
 
-
 {% highlight r %}
 head(data)
 {% endhighlight %}
-
 
 
 {% highlight text %}
@@ -141,23 +137,19 @@ head(data)
 ## 6     3450      8748          0          0              6
 {% endhighlight %}
 
-</br>
-It is quite a hefty file (>900k rows and 37 different variables), however we are really only interested in the following variables: 
 
--`BGN_DATE`: Date of the weather event,
--`STATE`,
--`FATALITIES`,
--`INJURIES`,
--`PROPDMG`: Property damage,
--`PROPDMGEXP`: Exponential value of the property damage,
--`CROPDMG`: Crop damage &
--`CROPDMGEXP`: Exponential value of the property damage.
+It is quite a hefty file (>900k rows and 37 different variables), however we are really only interested in the following variables:
+- `BGN_DATE`: Date of the weather event,
+- `STATE`,
+- `FATALITIES`,
+- `INJURIES`,
+- `PROPDMG`: Property damage,
+- `PROPDMGEXP`: Exponential value of the property damage,
+- `CROPDMG`: Crop damage &
+- `CROPDMGEXP`: Exponential value of the property damage.
 
-</br>
-</br>
 
 Select the variables above and create a new variable in `data` and call it `Year`, by extracting the year from the column `BGN_DATE`. Afterwards, we take out `BGN_DATE`, as we are not interested in the specific date, but only the year of the weather event:
-
 
 {% highlight r %}
 data <- select(data, BGN_DATE, STATE, FATALITIES, INJURIES, PROPDMG, PROPDMGEXP,
@@ -166,13 +158,12 @@ data$Year <- as.numeric(format(mdy_hms(data$BGN_DATE), "%Y"))
 data <- select(data, -BGN_DATE)
 {% endhighlight %}
 
-</br>
+
 In order to check the economic impact of severe weather, both property and crop damage values involve expontential values: `PROPDMGEXP` and `CROPDMGEXP`. Let us check the variety and amount of the different exponential values in these two variables:
 
 {% highlight r %}
 unique(data$PROPDMGEXP)
 {% endhighlight %}
-
 
 
 {% highlight text %}
@@ -181,11 +172,9 @@ unique(data$PROPDMGEXP)
 {% endhighlight %}
 
 
-
 {% highlight r %}
 summary(data$PROPDMGEXP)
 {% endhighlight %}
-
 
 
 {% highlight text %}
@@ -196,11 +185,9 @@ summary(data$PROPDMGEXP)
 {% endhighlight %}
 
 
-
 {% highlight r %}
 unique(data$CROPDMGEXP)
 {% endhighlight %}
-
 
 
 {% highlight text %}
@@ -209,11 +196,9 @@ unique(data$CROPDMGEXP)
 {% endhighlight %}
 
 
-
 {% highlight r %}
 summary(data$CROPDMGEXP)
 {% endhighlight %}
-
 
 
 {% highlight text %}
@@ -221,7 +206,7 @@ summary(data$CROPDMGEXP)
 ## 618413      7     19      1      9     21 281832      1   1994
 {% endhighlight %}
 
-</br>
+
 We can see that there are several types of exponential values, however, they are pretty difficult to interpret. The only ones that can be interpreted are `Kk` (=1,000), `Mm` (=1,000,000) and `B` (=1,000,000,000). Since the other exponential values are relatively few and we have no further information about the interpretation of them, we set these to be 0. 
 We replace the exponential values with numerical values using `gsub`: 
 
@@ -243,7 +228,7 @@ data$CROPDMGEXP <- as.numeric(data$CROPDMGEXP)
 data$CROPDMGEXP[is.na(data$CROPDMGEXP)] <- 0
 {% endhighlight %}
 
-</br>
+
 Multiply `CROPDMG` with `CROPDMGEXP` and `PROPDMG` with `PROPDMG` and save them into two new variables called `Crop` and `Property`, then take out `CROPDMG`, `CROPDMGEXP`, `PROPDMG` and `PROPDMG` from `data`:
 
 {% highlight r %}
@@ -251,14 +236,14 @@ data <- mutate(data, Crop = CROPDMG*CROPDMGEXP, Property = PROPDMG*PROPDMGEXP)
 data <- select(data, -CROPDMG, -CROPDMGEXP, -PROPDMG, -PROPDMGEXP)
 {% endhighlight %}
 
-</br>
+
 Before summarizing the observations (based on state and year), let us clean up the column names, so that they all follow the same principle of uppercase on the first letter: 
 
 {% highlight r %}
 colnames(data)[1:3] <- c("State", "Fatalities", "Injuries")
 {% endhighlight %}
 
-</br>
+
 Okidoki, now we are ready to summarize the `data`, based on 'Year' and 'State':
 
 {% highlight r %}
@@ -267,14 +252,12 @@ data <- data %>%
   summarize(Fatalities = sum(Fatalities), Injuries = sum(Injuries), Crop = sum(Crop), Property = sum(Property))
 {% endhighlight %}
 
-</br>
 
 Now that the `data` has been summarized based on state and year, let us check what it looks like: 
 
 {% highlight r %}
 head(data)
 {% endhighlight %}
-
 
 
 {% highlight text %}
@@ -291,11 +274,9 @@ head(data)
 {% endhighlight %}
 
 
-
 {% highlight r %}
 str(data)
 {% endhighlight %}
-
 
 
 {% highlight text %}
@@ -311,14 +292,14 @@ str(data)
 ##  - attr(*, "drop")= logi TRUE
 {% endhighlight %}
 
-</br>
+
 When taking a first glimpse we can see that there are 72 different states instead of 50. Since we do not know what these other states are we will exclude them from the data, using `state.abb` from the `datasets` package:
 
 {% highlight r %}
 data <- subset(data, State %in% c(state.abb))
 {% endhighlight %}
 
-</br>
+
 We can now see that we have 2,934 rows of observations. However, considering that we are looking into 50 states over a 62 year period, we would expect the number of rows to be 3,100. So, there seem to be observations missing. We will add these to the `data` using `expand.grid` and `merge`:
 
 {% highlight r %}
@@ -327,7 +308,6 @@ vals <- expand.grid(Year = unique(data$Year),
 data <- merge(vals, data, all = TRUE)
 head(data)
 {% endhighlight %}
-
 
 
 {% highlight text %}
@@ -340,19 +320,16 @@ head(data)
 ## 6 1950    CO          0        1    0    50000
 {% endhighlight %}
 
-</br>
+
 We are now done with cleaning up the data. We have our observations based on the four events (Crop damage, Fatalities, Injuries and Property damage) and we have input for each state per year ranging from 1950-2011. In the cases where we do not have any data we have given them the value `NA` instead of 0. The reason behind it is that it is uncertain whether the NA's are due to no reported observations or that information is simply missing. Some states have reported values despite no human nor economic impact (all values are 0). Therefore, we will make a distinction between the observed rows and the missing ones.
-</br>
+
 That is about it for cleaning up the data. Next up, making a choropleth map!
-</br>
 
 <h3>Making the interactive map</h3>
 
-</br>
+Now the fun stuff: Making the interactive map!
 
-Now the fun stuff: Making the interactive map! 
 We still need to arrange the data in order to be able to read it into our choropleth map. We will add all the events into one column. Instead of having 3,100 rows with 6 variables, we will arrange it into 12,400 rows with 4 variables: State, Year, Event and value. We will use `melt` from the `reshape2` package and we will also load in the packages for making the choropleth maps:
-
 
 {% highlight r %}
 library(reshape2)
@@ -365,19 +342,17 @@ data <- melt(data, id = c("State", "Year"))
 colnames(data)[3:4] <- c("Event", "Value")
 {% endhighlight %}
 
-</br>
+
 We can choose to save this data into a csv file, so that we do not need to run through all the steps above again: 
 
 {% highlight r %}
 write.csv(data, file = "stormdata.csv")
 {% endhighlight %}
 
-</br>
+
 In order for the choropleth map to work I had to do some changes in the `ichoropleth` function in the `rMaps` package, namely the `fillKey`. `fillKey` takes the `Value` from the event and applies a color to it based on its value (namely, which range the value falls within), which will be visible in the choropleth map. In the `ichoropleth` function this value is based on the quantile value, but this creates, for the data we are using, an error because quantile values in our data are the same for some levels and cannot cannot be used as break values.
-</br>
+
 In order to get around this I created another function, called `ichoropleth2` (very intuitive...), where I have changed the `fillKey` range to be a variable in our data set (which we will add later to our `data`), where we can decide what color range based on the `Value`. Also, we add a color for the NA's. Once done I save all the `ichoropleth2` in a separate R-file, which I will use to call later by using the command `source("the-name-of-your-choropleth-function.R")`. In my example i simply named it `helper.R`:
-
-
 
 {% highlight r %}
 ichoropleth2 <- function(x, data, pal = "Blues", ncuts = 6, animate = NULL, play = F, map = 'usa', legend = TRUE, labels = TRUE, ...){
@@ -457,11 +432,10 @@ ichoropleth2 <- function(x, data, pal = "Blues", ncuts = 6, animate = NULL, play
 }
 {% endhighlight %}
 
-</br>
-<h3>First map - Fatalities</h3>
-</br>
-Let us start making the map for Fatalities. We will only need the `State`, `Year` and `Value` for making the interactive map from `data`. We will also need to create an additional variable, called `fillKey`, which will be determining what color each value will have on the map when we run `ichoropleth2`. 
 
+<h3>First map - Fatalities</h3>
+
+Let us start making the map for Fatalities. We will only need the `State`, `Year` and `Value` for making the interactive map from `data`. We will also need to create an additional variable, called `fillKey`, which will be determining what color each value will have on the map when we run `ichoropleth2`. 
 
 {% highlight r %}
 fatalities <- data[data$Event == "Fatalities",]
@@ -490,9 +464,9 @@ i1 <- ichoropleth2(Value ~ State, data = fatalities, pal="PuRd", animate= "Year"
 i1
 {% endhighlight %}
 
-</br>
-Our map should look something like this for fatalities: 
-</br>
+
+Our map should look something like this for fatalities:
+
 <div class="container2">
 	<iframe src='{{site.baseurl}}/blogfigs/2015-10-06-weather-impact/fatalities2.html' scrolling='no' seamless
 	class='rChart datamaps '
@@ -501,13 +475,10 @@ Our map should look something like this for fatalities:
 	></iframe>
 </div>
 
-</br>
-
 
 <h3>Second map - Property Damage</h3>
-</br>
-Actually, I will only do another map, which will be the Property damage (the other maps can be done by simply replacing the event):
 
+Actually, I will only do another map, which will be the Property damage (the other maps can be done by simply replacing the event):
 
 {% highlight r %}
 property <- data[data$Event == "Property",]
@@ -529,9 +500,9 @@ i2 <- ichoropleth2(Value ~ State, data = property, pal="PuRd", animate= "Year")
 i2
 {% endhighlight %}
 
-</br>
+
 And there we have our second map of property damage:
-</br>
+
 <div class="container2">
 	<iframe src='{{site.baseurl}}/blogfigs/2015-10-06-weather-impact/property2.html' scrolling='no' seamless
 	class='rChart datamaps '
@@ -541,14 +512,11 @@ And there we have our second map of property damage:
 </div>
 
 
-</br>
-
-There you have it: Two interactive choropleth map of the US, stretching from 1950-2011, showing us the number of fatalities and the total property damage due to weather events. The next steps will be some finetuning before we save our maps into html. We could stop here, but I would like to some finetuning.
+There you have it: Two interactive choropleth map of the US, stretching from 1950-2011, showing us the number of fatalities and the total property damage due to weather events. The next steps will be some finetuning before we save our maps into html. We could stop here, but I would like to some finetuning.</br>
 First, I would like to add some more info when we hover over a state, for instance the property damage in USD. 
 Second, in order to make the values a bit easier to read, I will introduce commas to separate groups of three digits.
-</br>
-Let us start with the second part first and update our choropleth maps for fatalities and property damage: 
 
+Let us start with the second part first and update our choropleth maps for fatalities and property damage: 
 
 {% highlight r %}
 fatalities$Value <- prettyNum(fatalities$Value, big.mark = ",")
@@ -557,9 +525,8 @@ property$Value <- prettyNum(property$Value, big.mark = ",")
 i2 <- ichoropleth2(Value ~ State, data = property, pal="PuRd", animate= "Year")
 {% endhighlight %}
 
-</br>
-In order to provide info when hovering over the state, there seem to be some different ways to do this. However, I was not able to solve it in any of those ways and decided to do it my way. Firstly, I set the parameters for the size of the maps. Secondly, I save them to .html. Thirdly, I add `geographyConfig` to our created TopoJSON (which is created in the `ichoropleth` function):
 
+In order to provide info when hovering over the state, there seem to be some different ways to do this. However, I was not able to solve it in any of those ways and decided to do it my way. Firstly, I set the parameters for the size of the maps. Secondly, I save them to .html. Thirdly, I add `geographyConfig` to our created TopoJSON (which is created in the `ichoropleth` function):
 
 {% highlight r %}
 i1$addParams(height = 350, width = 510)
@@ -568,7 +535,7 @@ i2$addParams(height = 350, width = 510)
 i2$save('property.html', cdn = TRUE)
 {% endhighlight %}
 
-</br>
+
 Open up your preferred text editor, open your maps you created earlier, scroll down to almost the very bottom of your TopoJSON section, and add the following piece of code on top of "id" for fatalities.html and injuries.html (or whatever you named them): 
 
 {% highlight javascript %}
@@ -580,7 +547,7 @@ Open up your preferred text editor, open your maps you created earlier, scroll d
 },
 {% endhighlight %}
 
-</br>
+
 Do the same thing for crop and property damage, the only difference is the dollar sign:
 
 {% highlight javascript %}
@@ -592,7 +559,7 @@ Do the same thing for crop and property damage, the only difference is the dolla
 },
 {% endhighlight %}
 
-</br>
+
 The place where the code should be added is right after the `WY` and just before `id` (almost at the very end):
 
 {% highlight javascript %}
@@ -618,12 +585,12 @@ The place where the code should be added is right after the `WY` and just before
   
 {% endhighlight %}
 
-</br>
+
 If you open up your maps in your browser, you will now see that if you hover over a state, you will see the numbers behind the human or economic impact and that there is a comma separate grouping three digits, and that whenever a state has missing values, the state will be in a gray color:
-</br>
-</br>
+
+
 <h3>Fatalities</h3>
-</br>
+
 <div class="container2">
 	<iframe src='{{site.baseurl}}/blogfigs/2015-10-06-weather-impact/fatalities.html' scrolling='no' seamless
 	class='rChart datamaps '
@@ -632,10 +599,9 @@ If you open up your maps in your browser, you will now see that if you hover ove
 	></iframe>
 </div>
 
-</br>
-</br>
+
 <h3>Property damage</h3>
-</br>
+
 <div class="container2">
 	<iframe src='{{site.baseurl}}/blogfigs/2015-10-06-weather-impact/property.html' scrolling='no' seamless
 	class='rChart datamaps '
@@ -643,14 +609,10 @@ If you open up your maps in your browser, you will now see that if you hover ove
 	frameBorder = "0"
 	></iframe>
 </div>
-	
-</br>
- 
 
-And that is it, we are done! Now you can show off your new interactive choropleth maps to your friends, colleagues and neighbours, or you can play with them in your R environment or embed them and share them on your blogs, like I did :D 
-</br>
+
+And that is it, we are done! Now you can show off your new interactive choropleth maps to your friends, colleagues and neighbours, or you can play with them in your R environment or embed them and share them on your blogs, like I did :D
 
 I hope you enjoyed it, more posts will be coming shortly.
 
-For any further questions, please feel free to <a href="{{site.baseurl}}/contact/">contact me</a> or leave a comment. You can also see the code for the maps I made <a href="https://github.com/ohlphi/weather-choropleth-maps">here</a>. 
-
+For any further questions, please feel free to <a href="{{site.baseurl}}/contact/">contact me</a> or leave a comment. You can also see the code for the maps I made <a href="https://github.com/ohlphi/weather-choropleth-maps">here</a>.
