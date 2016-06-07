@@ -15,7 +15,7 @@ The data used in the examples are stretching from January 1999 until May 2016, t
 <br>
 
 
-###<b>The refugee and asylum countries - yearly top 7</b>
+<h3><b>The refugee and asylum countries - yearly top 7</b></h3>
 The charts below are created with <a href="http://jkunst.com/highcharter/">'highcharter'</a>, which is a very nice R package for creating beautiful interactive charts.
 <br>
 The first chart shows the yearly top seven countries, in terms of the highest number of refugees fleeing their countries that year. If you hover over you can see the number of refugees for the specific country and if you wish to go into more detail you can also select, by clicking on the country below, which countries you want to view and/or exclude.  
@@ -39,7 +39,7 @@ The second chart shows the yearly top seven asylum countries, in terms of number
 <style>iframe.rChart{ position: absolute; top: 0; left: 0; width: 100%; height: 100%;}</style>
 
 
-###<b>Graph network of refugees</b>
+<h3><b>Graph network of refugees</b></h3>
 The two graph networks below were made using the R package <a href="http://datastorm-open.github.io/visNetwork/">'visNetwork'</a>, which is a very handy package for illustrating the complexity of where refugees are coming from and where they seek asylum. 
 <br>
 The first graph is made by summarizing how many refugees left their countries in 2015 and to which country they seeked asylum. In the upper left corner of the graph network you can check out a specific country (whether it is a refugee or asylum country) and its network. In the group selection you can see which are the asylum countries (where the refugees are seeking asylum), refugee countries, dual flow countries (countries which have asylum seekers, but also people leaving their own country), mainly asylum countries (having a large proportion of asylum seekers instead of own citizens seeking refuge elsewhere) and mainly refugee countries (mainly a refugee country, but might have some refugees seeking asylum in their country).
