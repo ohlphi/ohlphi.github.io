@@ -25,7 +25,9 @@ The first chart shows the yearly top seven countries, in terms of the highest nu
 
 <style>div.container2{ position: relative; width: 100%; height: 0; padding-bottom: 80%;}</style>
 <style>iframe.rChart{ position: absolute; top: 0; left: 0; width: 100%; height: 100%;}</style>
-
+<br>
+<br>
+<br>
 <br>
 <br>
 The second chart shows the yearly top seven asylum countries, in terms of number of refugees seeking asylum for that specific country.
@@ -37,8 +39,11 @@ The second chart shows the yearly top seven asylum countries, in terms of number
 
 <style>div.container2{ position: relative; width: 100%; height: 0; padding-bottom: 80%;}</style>
 <style>iframe.rChart{ position: absolute; top: 0; left: 0; width: 100%; height: 100%;}</style>
-
-
+<br>
+<br>
+<br>
+<br>
+<br>
 <h3><b>Graph network of refugees</b></h3>
 The two graph networks below were made using the R package <a href="http://datastorm-open.github.io/visNetwork/">'visNetwork'</a>, which is a very handy package for illustrating the complexity of where refugees are coming from and where they seek asylum. 
 <br>
@@ -53,7 +58,9 @@ You can also zoom in on the network and if you hover over the edges you can see 
 
 <style>div.container2{ position: relative; width: 100%; height: 0; padding-bottom: 80%;}</style>
 <style>iframe.rChart{ position: absolute; top: 0; left: 0; width: 100%; height: 100%;}</style>
-
+<br>
+<br>
+<br>
 <br>
 <br>
 The graph below is showing the same as the one above, but it has been filtered to only look to countries which had more than 500 refugees leaving its country in 2015. The reason for this is just to make it a bit easier to read out the graph network (even with a nifty circular layout it might be tricky to read out all the information). 
@@ -65,6 +72,9 @@ The graph below is showing the same as the one above, but it has been filtered t
 
 <style>div.container2{ position: relative; width: 100%; height: 0; padding-bottom: 80%;}</style>
 <style>iframe.rChart{ position: absolute; top: 0; left: 0; width: 100%; height: 100%;}</style>
+<br>
+<br>
+<br>
 <br>
 <br>
 For those interested in wanting to recreate the charts and networks above, you can download or fork the script and data from <a href="https://github.com/ohlphi/refugee_data_UNHCR">here</a>.
