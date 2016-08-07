@@ -504,7 +504,7 @@ And there we have our second map of property damage:
 </div>
 <br>
 <br>
-There you have it: Two interactive choropleth map of the US, stretching from 1950-2011, showing us the number of fatalities and the total property damage due to weather events. The next steps will be some finetuning before we save our maps into html. We could stop here, but I would like to some finetuning.</br>
+There you have it: Two interactive choropleth map of the US, stretching from 1950-2011, showing us the number of fatalities and the total property damage due to weather events. The next steps will be some finetuning before we save our maps into html. We could stop here, but I would like to some finetuning.<br>
 First, I would like to add some more info when we hover over a state, for instance the property damage in USD. 
 Second, in order to make the values a bit easier to read, I will introduce commas to separate groups of three digits.
 <br>
