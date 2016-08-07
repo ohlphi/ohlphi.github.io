@@ -9,7 +9,7 @@ date: October 6, 2015
 
 
 <div class="container2">
-	<iframe src="{{site.baseurl}}/blogfigs/2015-10-06-weather-impact/injuries.html" scrolling='no' seamless frameborder="0" class="rChart datamaps"></iframe>
+	<iframe src="{{site.baseurl}}/blogfigs/2015-10-06-weather-impact/injuries.html" scrolling='no' seamless frameborder="0" class="rChart datamaps" id="iframe_chart_1"></iframe>
 </div>
 
 <style>div.container2{ position: relative; width: 100%; height: 0; padding-bottom: 80%;}</style>
@@ -455,7 +455,7 @@ fatalities$fillKey <- ordered(fatalities$fillKey, levels = c("0-10",
                                                            ">500",
                                                            "No info"))
 {% endhighlight %}
-</br>
+<br>
 Ok, now we can run our `ichoropleth2` function and create the map:
 
 {% highlight r %}
@@ -468,11 +468,7 @@ i1
 Our map should look something like this for fatalities:
 <br>
 <div class="container2">
-	<iframe src='{{site.baseurl}}/blogfigs/2015-10-06-weather-impact/fatalities2.html' scrolling='no' seamless
-	class='rChart datamaps '
-	id=iframe-chart_2 
-	frameBorder = "0"
-	></iframe>
+	<iframe src="{{site.baseurl}}/blogfigs/2015-10-06-weather-impact/fatalities2.html" scrolling='no' seamless frameborder="0" class="rChart datamaps" id="iframe_chart_2"></iframe>
 </div>
 <br>
 <br>
@@ -504,11 +500,7 @@ i2
 And there we have our second map of property damage:
 <br>
 <div class="container2">
-	<iframe src='{{site.baseurl}}/blogfigs/2015-10-06-weather-impact/property2.html' scrolling='no' seamless
-	class='rChart datamaps '
-	id=iframe-chart_3 
-	frameBorder = "0"
-	></iframe>
+	<iframe src="{{site.baseurl}}/blogfigs/2015-10-06-weather-impact/property2.html" scrolling='no' seamless frameborder="0" class="rChart datamaps" id="iframe_chart_3"></iframe>
 </div>
 <br>
 <br>
@@ -590,24 +582,24 @@ If you open up your maps in your browser, you will now see that if you hover ove
 <br>
 <h3>Fatalities</h3>
 <br>
+
 <div class="container2">
-	<iframe src='{{site.baseurl}}/blogfigs/2015-10-06-weather-impact/fatalities.html' scrolling='no' seamless
-	class='rChart datamaps '
-	id=iframe-chart_4 
-	frameBorder = "0"
-	></iframe>
+	<iframe src="{{site.baseurl}}/blogfigs/2015-10-06-weather-impact/fatalities.html" scrolling='no' seamless frameborder="0" class="rChart datamaps" id="iframe_chart_4"></iframe>
 </div>
+
+
+
+
 <br>
 <br>
 <h3>Property damage</h3>
 <br>
 <div class="container2">
-	<iframe src='{{site.baseurl}}/blogfigs/2015-10-06-weather-impact/property.html' scrolling='no' seamless
-	class='rChart datamaps '
-	id=iframe-chart_5 
-	frameBorder = "0"
-	></iframe>
+	<iframe src="{{site.baseurl}}/blogfigs/2015-10-06-weather-impact/property.html" scrolling='no' seamless frameborder="0" class="rChart datamaps" id="iframe_chart_5"></iframe>
 </div>
+
+
+
 <br>
 <br>
 And that is it, we are done! Now you can show off your new interactive choropleth maps to your friends, colleagues and neighbours, or you can play with them in your R environment or embed them and share them on your blogs, like I did :D<br>
